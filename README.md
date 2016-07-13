@@ -4,7 +4,7 @@
 [![Build
 Status](https://travis-ci.org/revaluate/contactually-ruby.svg?branch=master)](https://travis-ci.org/revaluate/contactually-ruby)
 
-This is a simple API Wrapper for the Contactually API. It is not feature complete, as it does not support all available API endpoints yet, but I guess for most use cases this will be fine. Feel free to contribute!
+This is a simple API Wrapper for the Contactually API. It is not feature complete, as it does not support all available API endpoints yet, but should work for most use cases this will be fine. Feel free to contribute!
 
 ## Installation
 
