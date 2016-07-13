@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "id": 41296011,
+      "name": "Bucket Test 1",
+      "goal": "Test 1",
+      "reminder_interval": 11,
+      "created_at": "2013-07-02T15:45:01Z",
+      "updated_at": "2013-07-02T15:45:01Z"
+    },
+    {
+      "id": 41296012,
+      "name": "Bucket Test 2",
+      "goal": "Test 2",
+      "reminder_interval": 22,
+      "created_at": "2013-07-02T15:45:01Z",
+      "updated_at": "2013-07-02T15:45:01Z"
+    },
+    {
+      "id": 41296013,
+      "name": "Bucket Test 3",
+      "goal": "Test 3",
+      "reminder_interval": 33,
+      "created_at": "2013-07-02T15:45:01Z",
+      "updated_at": "2013-07-02T15:45:01Z"
+    },
+    {
+      "id": 41296014,
+      "name": "Bucket Test 4",
+      "goal": "Test 4",
+      "reminder_interval": 44,
+      "created_at": "2013-07-02T15:45:01Z",
+      "updated_at": "2013-07-02T15:45:01Z"
+    }
+  ],
+  "meta": {
+    "total": 4,
+    "next_page": null,
+    "previous_page": null
+  }
+}
