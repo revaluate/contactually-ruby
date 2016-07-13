@@ -1,6 +1,6 @@
 # Contactually-Ruby
 
-[![Code Climate](https://codeclimate.com/github/railslove/contactually-ruby/badges/gpa.svg)](https://codeclimate.com/github/revaluate/contactually-ruby)
+[![Code Climate](https://codeclimate.com/github/revaluate/contactually-ruby/badges/gpa.svg)](https://codeclimate.com/github/revaluate/contactually-ruby)
 [![Build
 Status](https://travis-ci.org/revaluate/contactually-ruby.svg?branch=master)](https://travis-ci.org/revaluate/contactually-ruby)
 
@@ -61,6 +61,7 @@ Configuration goes as follows:
 Implemented endpoints are:
 
 * Accounts
+* Buckets
 * Contact Groupings
 * Contacts
 * Contents
