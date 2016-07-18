@@ -4,6 +4,7 @@ describe Contactually::Contacts do
 
   let(:contact_json) { File.read(File.join(File.dirname(__FILE__),"fixtures/contact.json")) }
   let(:contacts_index_json) { File.read(File.join(File.dirname(__FILE__),"fixtures/contacts_index.json")) }
+  let(:contacts_index_page_2_json) { File.read(File.join(File.dirname(__FILE__),"fixtures/contacts_index_page_2.json")) }
 
   before(:all) do
     Contactually.configure { |c| c.access_token = 'VALID_ACCESS_TOKEN' }
@@ -93,14 +94,21 @@ describe Contactually::Contacts do
   describe '#index' do
     it 'calls the api with correct params' do
       allow(@master).to receive(:call).with('contacts.json', :get, { foo: :bar }).and_return({ 'data' => [] })
-      subject.index({ foo: :bar })
+      subject.index(nil, { foo: :bar })
       expect(@master).to have_received(:call)
     end
 
     it 'returns contacts from json response' do
       allow(@master).to receive(:call).with('contacts.json', :get, {}).and_return(JSON.load(contacts_index_json))
-      expect(subject.index({})).to be_kind_of Array
-      expect(subject.index({})[0]).to be_kind_of Contactually::Contact
+      expect(subject.index(nil, {})).to be_kind_of Array
+      expect(subject.index(nil, {})[0]).to be_kind_of Contactually::Contact
+    end
+
+    it 'pages through all pages of results' do
+      expect(@master).to receive(:call).with('contacts.json', :get, {page: 1}).twice.and_return(JSON.load(contacts_index_json))
+      expect(@master).to receive(:call).with('contacts.json', :get, {page: 2}).twice.and_return(JSON.load(contacts_index_page_2_json))
+      expect(subject.index(true, {})).to be_kind_of Array
+      expect(subject.index(true, {})[0]).to be_kind_of Contactually::Contact
     end
   end
 
