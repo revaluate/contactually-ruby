@@ -37,9 +37,17 @@ module Contactually
       Contactually::Utils.build_contact(hash);
     end
 
-    def index(params = {})
-      hash = @master.call('contacts.json', :get, params)
-      Contactually::Utils.contacts_hash_to_objects(hash)
+    def index(all=false, params = {})
+      contacts = []
+      i = 1
+      while true
+        params = {page: i} if all
+        h = @master.call('contacts.json', :get, params)
+        contacts.concat(Contactually::Utils.contacts_hash_to_objects(h))
+        i += 1
+        break if !all || h['meta']['next_page'] == nil || h['meta']['next_page'] == ''
+      end
+      contacts
     end
 
     def search(params = {})

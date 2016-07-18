@@ -1,7 +1,7 @@
 {
   "meta": {
     "total": 4,
-    "next_page": "https://api.contactually.com/v2/contacts?page=2",
+    "next_page": null,
     "previous_page": null
   },
   "data": [
