@@ -23,7 +23,7 @@ describe Contactually::ContactGroupings do
 
   describe '#create' do
     it 'calls the api with correct params' do
-      allow(@master).to receive(:call).with('contacts/1/groupings.json', :post, { grouping_id: 512 }).and_return({ 'id' => 1234 })
+      allow(@master).to receive(:call).with('contacts/1/groupings.json', :post, { grouping_id: 512 }).and_return({ 'data' => {'id' => 1234 }})
       subject.create(1, { grouping_id: 512 })
       expect(@master).to have_received(:call)
     end

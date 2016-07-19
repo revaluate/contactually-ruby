@@ -38,7 +38,7 @@ describe Contactually::Groupings do
 
   describe '#create' do
     it 'calls the api with correct params' do
-      allow(@master).to receive(:call).with('groupings.json', :post, { grouping: { foo: :bar }}).and_return({ 'id' => 1234 })
+      allow(@master).to receive(:call).with('groupings.json', :post, { grouping: { foo: :bar }}).and_return({ 'data' => {'id' => 1234 }})
       subject.create({ grouping: { foo: :bar }})
       expect(@master).to have_received(:call)
     end
@@ -59,7 +59,7 @@ describe Contactually::Groupings do
 
   describe '#show' do
     it 'calls the api with correct params' do
-      allow(@master).to receive(:call).with('groupings/1.json', :get, { foo: :bar }).and_return({ id: 1234 })
+      allow(@master).to receive(:call).with('groupings/1.json', :get, { foo: :bar }).and_return({ 'data' => {id: 1234 }})
       subject.show(1, { foo: :bar })
       expect(@master).to have_received(:call)
     end
@@ -72,7 +72,7 @@ describe Contactually::Groupings do
 
   describe '#update' do
     it 'calls the api with correct params' do
-      allow(@master).to receive(:call).with('groupings/1.json', :put, { grouping: { foo: :bar }}).and_return({ id: 1234 })
+      allow(@master).to receive(:call).with('groupings/1.json', :put, { grouping: { foo: :bar }}).and_return({ 'data' => {id: 1234 }})
       subject.update(1, { grouping: { foo: :bar }})
       expect(@master).to have_received(:call)
     end

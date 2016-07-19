@@ -1,8 +1,10 @@
 {
-  "id": 41296013,
-  "name": "Bucket Test",
-  "goal": "Test",
-  "reminder_interval": 55,
-  "created_at": "2013-07-02T15:45:01Z",
-  "updated_at": "2013-07-02T15:45:01Z"
+  "data": {
+    "id": 41296013,
+    "name": "Bucket Test",
+    "goal": "Test",
+    "reminder_interval": 55,
+    "created_at": "2013-07-02T15:45:01Z",
+    "updated_at": "2013-07-02T15:45:01Z"
+  }
 }

@@ -1,10 +1,12 @@
 {
-  "id": 18,
-  "url": null,
-  "title": "Lolokopter",
-  "description": null,
-  "user_id": 622,
-  "created_at": "2014-09-05T15:26:47Z",
-  "article": null,
-  "groupings": []
+  "data": {
+    "id": 18,
+    "url": null,
+    "title": "Lolokopter",
+    "description": null,
+    "user_id": 622,
+    "created_at": "2014-09-05T15:26:47Z",
+    "article": null,
+    "groupings": []
+  }
 }

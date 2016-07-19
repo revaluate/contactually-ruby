@@ -37,7 +37,7 @@ module Contactually
       def build_object(type, hash)
         representer_class = "Contactually::Representer::#{type.classify}Representer".constantize
         object_class = "Contactually::#{type.classify}".constantize
-        representer_class.new(object_class.new).from_hash(hash)
+        representer_class.new(object_class.new).from_hash(hash['data'])
       end
     end
   end

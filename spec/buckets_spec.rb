@@ -44,7 +44,7 @@ describe Contactually::Buckets do
 
   describe '#show' do
     it 'calls the api with correct params' do
-      allow(@master).to receive(:call).with('buckets/1.json', :get, { foo: :bar }).and_return({ id: 1 })
+      allow(@master).to receive(:call).with('buckets/1.json', :get, { foo: :bar }).and_return({ 'data' => {id: 1}})
       subject.show(1, { foo: :bar })
       expect(@master).to have_received(:call)
     end
