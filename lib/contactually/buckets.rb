@@ -37,6 +37,11 @@ module Contactually
       Contactually::Utils.contacts_hash_to_objects(hash)
     end
 
+    def add_contact(id, params = {})
+      hash = @master.call("buckets/#{id}/contacts.json", :post, params)
+      Contactually::Utils.contacts_hash_to_objects(hash)
+    end
+
     def search(params = {})
       hash = @master.call('buckets/search.json', :get, params)
       Contactually::Utils.buckets_hash_to_objects(hash)
