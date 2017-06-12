@@ -16,7 +16,6 @@ module Contactually
       property :email
       property :avatar
       property :avatar_url
-      property :last_contacted
       property :visible
       property :twitter
       property :facebook_url
@@ -31,11 +30,9 @@ module Contactually
       property :email_addresses
       property :tags
       property :contact_status
-      property :team_last_contacted
-      property :team_last_contacted_by
       property :phone_numbers
       property :addresses
-      property :social_profiles
+      property :social_media_profiles
       property :websites
       property :custom_fields
       property :sent
@@ -43,6 +40,16 @@ module Contactually
       property :link
       property :content
       collection :groupings, extend: GroupingRepresenter, class: Grouping
+      nested :extra_data do
+        property :last_contacted
+        property :muted_at
+        property :relationship_status
+        property :team_last_contacted
+        property :team_last_contacted_by
+        property :last_bucketed_at
+        property :user_last_contacted_at
+        collection :buckets, extend: BucketRepresenter, class: Bucket
+      end
     end
   end
 end
