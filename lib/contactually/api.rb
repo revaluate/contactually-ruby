@@ -23,6 +23,10 @@ module Contactually
       @notes ||= Contactually::Notes.new self
     end
 
+    def interactions
+      @interactions ||= Contactually::Interactions.new self
+    end
+
     def tasks
       @tasks ||= Contactually::Tasks.new self
     end

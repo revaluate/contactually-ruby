@@ -24,7 +24,7 @@ module Contactually
 
     def update(id, params = {})
       hash = @master.call("buckets/#{id}.json", :put, params)
-      Contactually::Utils.build_bucket(hash);
+      Contactually::Utils.build_bucket(hash)
     end
 
     def index(params = {})
