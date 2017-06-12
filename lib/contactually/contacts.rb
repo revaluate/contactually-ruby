@@ -50,8 +50,11 @@ module Contactually
       contacts
     end
 
-    def search(params = {})
-      hash = @master.call('contacts/search.json', :get, params)
+    def search(search_term, params = {})
+      # contacts/search.json isn't in the API docs anymore - changing this to use 'q' as the documented search
+      # https://developers.contactually.com/docs/v2/#contacts-list-get
+      search_merge = {q: search_term}.merge(params)
+      hash = @master.call('contacts.json', :get, search_merge)
       Contactually::Utils.contacts_hash_to_objects(hash)
     end
 
