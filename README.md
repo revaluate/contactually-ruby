@@ -33,18 +33,19 @@ The available configuration options are:
 * access_token (your contactually access_token)
 * contactually_url (Default: "https://api.contactually.com/v2/")
 
-To get an access_token:
-register a new app - https://www.contactually.com/developer/applications
+#### Get an access_token:
+1. register a new app - https://www.contactually.com/developer/applications
+
 scopes are here - https://developers.contactually.com/docs/auth/#oauth2-authorize
 `all:manage` is full access
 you don't need a valid redirect url - you can use curl to get what you need
-put in a junk (but valid) url - aka https://test.my_app_url_is_fake.com
-click the 'authorize' under the callback url - copy the `code` in the URL string
+2. put in a junk (but valid) url - aka https://test.my_app_url_is_fake.com
+3. click the 'authorize' under the callback url - copy the `code` in the URL string
 you'll also need the `application id` & `secret` from your application page you just created
 
-`curl -H "Content-Type: application/json" -X POST -d '{"grant_type": "authorization_code", "client_id": "your_application_id", "client_secret": "secret_from_application_page", "code": "code_from_auth_url", "redirect_uri": "your_callback_url"}' https://auth.contactually.com/oauth2/token`
+4. `curl -H "Content-Type: application/json" -X POST -d '{"grant_type": "authorization_code", "client_id": "your_application_id", "client_secret": "secret_from_application_page", "code": "code_from_auth_url", "redirect_uri": "your_callback_url"}' https://auth.contactually.com/oauth2/token`
 
-the response to that (assuming you did it all correctly) will be your access_token
+5. the response to that (assuming you did it all correctly) will be your access_token
 
 
 
