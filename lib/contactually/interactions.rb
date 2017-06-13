@@ -19,7 +19,8 @@ module Contactually
     end
 
     def update(id, params = {})
-      @master.call("interactions/#{id}.json", :put, params)
+      hash = @master.call("interactions/#{id}.json", :put, params)
+      Contactually::Utils.build_interaction(hash)
     end
   end
 end
