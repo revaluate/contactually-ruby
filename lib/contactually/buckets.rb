@@ -47,6 +47,13 @@ module Contactually
       Contactually::Utils.contacts_hash_to_objects(hash)
     end
 
+    def remove_contact_from_all_buckets(id, params = {})
+      contact = @master.contacts.show(id)
+      contact.buckets.collect(&:id).each do |b|
+        remove_contact(b, params.deep_merge(data: { id: contact.id }))
+      end
+    end
+
     def search(search_term, params = {})
       # contacts/search.json isn't in the API docs anymore - changing this to use 'q' as the documented search
       # https://developers.contactually.com/docs/v2/#contacts-list-get
