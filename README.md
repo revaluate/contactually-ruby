@@ -80,6 +80,7 @@ Implemented endpoints are:
 * Contacts
 * Contents
 * Groupings
+* Interactions
 * Notes
 * Tasks
 
