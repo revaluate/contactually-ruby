@@ -39,6 +39,7 @@ module Contactually
       property :received
       property :link
       property :content
+      property :meta
       collection :groupings, extend: GroupingRepresenter, class: Grouping
       nested :extra_data do
         property :last_contacted

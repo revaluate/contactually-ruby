@@ -11,6 +11,10 @@ module Contactually
       property :reminder_interval
       property :created_at
       property :updated_at
+      property :meta
+      nested :extra_data do
+        property :contact_count
+      end
     end
   end
 end
