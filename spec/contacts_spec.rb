@@ -114,15 +114,15 @@ describe Contactually::Contacts do
 
   describe '#search' do
     it 'calls the api with correct params' do
-      allow(@master).to receive(:call).with('contacts/search.json', :get, { term: :foo_bar }).and_return({ 'data' => [] })
-      subject.search({ term: :foo_bar})
+      allow(@master).to receive(:call).with('contacts.json', :get, { q:'foo bar' }).and_return({ 'data' => [] })
+      subject.search('foo bar')
       expect(@master).to have_received(:call)
     end
 
     it 'returns contacts from json response' do
-      allow(@master).to receive(:call).with('contacts/search.json', :get, { term: :foo_bar }).and_return(JSON.load(contacts_index_json))
-      expect(subject.search({ term: :foo_bar })).to be_kind_of Array
-      expect(subject.search({ term: :foo_bar })[0]).to be_kind_of Contactually::Contact
+      allow(@master).to receive(:call).with('contacts.json', :get, { q:'foo bar' }).and_return(JSON.load(contacts_index_json))
+      expect(subject.search('foo bar')).to be_kind_of Array
+      expect(subject.search('foo bar')[0]).to be_kind_of Contactually::Contact
     end
   end
 

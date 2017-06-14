@@ -24,7 +24,7 @@ module Contactually
 
     def update(id, params = {})
       hash = @master.call("buckets/#{id}.json", :put, params)
-      Contactually::Utils.build_bucket(hash);
+      Contactually::Utils.build_bucket(hash)
     end
 
     def index(params = {})
@@ -47,8 +47,18 @@ module Contactually
       Contactually::Utils.contacts_hash_to_objects(hash)
     end
 
-    def search(params = {})
-      hash = @master.call('buckets/search.json', :get, params)
+    def remove_contact_from_all_buckets(id, params = {})
+      contact = @master.contacts.show(id)
+      contact.buckets.collect(&:id).each do |b|
+        remove_contact(b, params.deep_merge(data: { id: contact.id }))
+      end
+    end
+
+    def search(search_term, params = {})
+      # contacts/search.json isn't in the API docs anymore - changing this to use 'q' as the documented search
+      # https://developers.contactually.com/docs/v2/#contacts-list-get
+      search_merge = { q: search_term }.merge(params)
+      hash = @master.call('buckets.json', :get, search_merge)
       Contactually::Utils.buckets_hash_to_objects(hash)
     end
 

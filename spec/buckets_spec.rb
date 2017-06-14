@@ -82,6 +82,20 @@ describe Contactually::Buckets do
     end
   end
 
+  describe '#search' do
+    it 'calls the api with correct params' do
+      allow(@master).to receive(:call).with('buckets.json', :get, { q:'foo bar' }).and_return({ 'data' => [] })
+      subject.search('foo bar')
+      expect(@master).to have_received(:call)
+    end
+
+    it 'returns buckets from json response' do
+      allow(@master).to receive(:call).with('buckets.json', :get, { q:'foo bar' }).and_return(JSON.load(bucket_index_json))
+      expect(subject.search('foo bar')).to be_kind_of Array
+      expect(subject.search('foo bar')[0]).to be_kind_of Contactually::Bucket
+    end
+  end
+
   describe '#count' do
     it 'calls the api with correct params' do
       allow(@master).to receive(:call).with('buckets.json', :get, { limit: 1 }).and_return({ 'data' => [], 'meta' => {'total' => 120 }})

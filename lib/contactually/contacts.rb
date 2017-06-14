@@ -32,16 +32,31 @@ module Contactually
       @master.call("contacts/#{id}/tags.json", :post, params)
     end
 
+    def buckets(id, params = {})
+      hash = @master.call("contacts/#{id}/buckets.json", :get, params)
+      Contactually::Utils.buckets_hash_to_objects(hash)
+    end
+
+    def interactions(id, params = {})
+      hash = @master.call("contacts/#{id}/interactions.json", :get, params)
+      Contactually::Utils.interactions_hash_to_objects(hash)
+    end
+
+    def tasks(id, params = {})
+      hash = @master.call("contacts/#{id}/tasks.json", :get, params)
+      Contactually::Utils.tasks_hash_to_objects(hash)
+    end
+
     def update(id, params = {})
       hash = @master.call("contacts/#{id}.json", :put, params)
-      Contactually::Utils.build_contact(hash);
+      Contactually::Utils.build_contact(hash)
     end
 
     def index(all=false, params = {})
       contacts = []
       i = 1
       while true
-        params = {page: i} if all
+        params = { page: i } if all
         h = @master.call('contacts.json', :get, params)
         contacts.concat(Contactually::Utils.contacts_hash_to_objects(h))
         i += 1
@@ -50,8 +65,11 @@ module Contactually
       contacts
     end
 
-    def search(params = {})
-      hash = @master.call('contacts/search.json', :get, params)
+    def search(search_term, params = {})
+      # contacts/search.json isn't in the API docs anymore - changing this to use 'q' as the documented search
+      # https://developers.contactually.com/docs/v2/#contacts-list-get
+      search_merge = { q: search_term }.merge(params)
+      hash = @master.call('contacts.json', :get, search_merge)
       Contactually::Utils.contacts_hash_to_objects(hash)
     end
 

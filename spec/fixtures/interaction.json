@@ -1,0 +1,145 @@
+{
+  "data": {
+    "id": "interaction_5213",
+    "created_at": "2017-03-29 21:07:36 UTC",
+    "updated_at": "2017-03-29 21:07:36 UTC",
+    "body": null,
+    "initiated_by_contact": false,
+    "subject": "Triple-buffered bi-directional archive",
+    "timestamp": "2017-03-29 21:07:35 UTC",
+    "type": "email",
+    "participants": [
+      {
+        "contact_id": "contact_3837",
+        "handle": "americo.torphy@example.com",
+        "extra_data": {
+          "first_name": "Americo",
+          "last_name": "Torphy",
+          "avatar_url": null
+        }
+      },
+      {
+        "contact_id": "contact_3838",
+        "handle": "clement.anderson@example.com",
+        "extra_data": {
+          "first_name": "Clement",
+          "last_name": "Anderson",
+          "avatar_url": null
+        }
+      },
+      {
+        "contact_id": "contact_3839",
+        "handle": "freda.nikolaus@example.com",
+        "extra_data": {
+          "first_name": "Freda",
+          "last_name": "Nikolaus",
+          "avatar_url": null
+        }
+      }
+    ],
+    "extra_data": {
+      "editable": true,
+      "participant_count": 3,
+      "placeholder": false,
+      "contact_id": "contact_3837",
+      "contact_handle": "americo.torphy@example.com",
+      "associated_account_id": null,
+      "associated_user": {
+        "id": "user_179",
+        "created_at": "2017-03-29 21:07:34 UTC",
+        "updated_at": "2017-03-29 21:07:34 UTC",
+        "first_name": "Rozella",
+        "last_name": "Funk",
+        "email": "rozella.funk@example.com",
+        "avatar_url": null,
+        "role": null,
+        "status": "active"
+      },
+      "contact": {
+        "id": "contact_3837",
+        "created_at": "2017-03-29 21:07:35 UTC",
+        "updated_at": "2017-03-29 21:07:35 UTC",
+        "first_name": "Americo",
+        "last_name": "Torphy",
+        "company": null,
+        "location": null,
+        "title": "Assistant Vice Manager",
+        "avatar_url": null,
+        "tags": [],
+        "assigned_to_id": null,
+        "addresses": [
+          {
+            "id": "2568ca5f-1bf9-4b80-b48b-7b95935a8af2",
+            "full_address": "Schmidttown",
+            "label": "Office",
+            "street_1": null,
+            "street_2": null,
+            "city": null,
+            "state": null,
+            "zip": null,
+            "country": null
+          }
+        ],
+        "email_addresses": [
+          {
+            "id": "contact_identity_3679",
+            "label": null,
+            "address": "americo.torphy@example.com"
+          }
+        ],
+        "social_media_profiles": [
+          {
+            "id": "2dc8be05-b621-4878-af37-53b19be46be9",
+            "label": "LinkedIn",
+            "url": "http://reichert.biz"
+          }
+        ],
+        "websites": [
+          {
+            "id": "a8333cd3-c50e-4619-8094-0e6b33300a5c",
+            "label": "Social",
+            "address": "http://ogabecker.biz"
+          }
+        ],
+        "phone_numbers": [
+          {
+            "id": "71115982-2a0f-41ab-bdef-7043f69f2f7d",
+            "label": "Corner Payphone",
+            "number": "1-997-565-7190"
+          }
+        ],
+        "custom_fields": [],
+        "extra_data": {
+          "last_contacted": null,
+          "muted_at": null,
+          "relationship_status": "none",
+          "team_last_contacted_at": null,
+          "team_last_contacted_by_id": null,
+          "last_bucketed_at": null,
+          "user_last_contacted_at": null,
+          "buckets": [
+            {
+              "id": "bucket_2217",
+              "name": "Reactive bifurcated artificial intelligence",
+              "reminder_interval": null
+            },
+            {
+              "id": "bucket_2216",
+              "name": "Synchronised asynchronous circuit",
+              "reminder_interval": null
+            }
+          ],
+          "sources": [],
+          "followup_source": null,
+          "lead_pools": [],
+          "team_last_contacted_by": null,
+          "associated_tags": [],
+          "associated_company": null,
+          "associated_location": null,
+          "assigned_to": null
+        }
+      }
+    }
+  },
+  "meta": {}
+}
