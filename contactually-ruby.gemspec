@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'activesupport'
   s.add_dependency 'faraday'
-  s.add_dependency 'roar'
+  s.add_dependency 'roar', '~> 0.12'
 
   s.add_development_dependency 'pry-byebug'
   s.add_development_dependency 'rake'
