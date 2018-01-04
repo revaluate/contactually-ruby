@@ -56,7 +56,7 @@ module Contactually
       contacts = []
       i = 1
       while true
-        params = { page: i } if all
+        params[:page] = i if all
         h = @master.call('contacts.json', :get, params)
         contacts.concat(Contactually::Utils.contacts_hash_to_objects(h))
         i += 1
